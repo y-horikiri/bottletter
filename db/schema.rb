@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_04_050601) do
+ActiveRecord::Schema.define(version: 2021_04_07_011036) do
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "letter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["letter_id"], name: "index_favorites_on_letter_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "letters", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -24,11 +33,16 @@ ActiveRecord::Schema.define(version: 2021_04_04_050601) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "nickname"
     t.string "name"
-    t.string "twitter_id"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "favorites", "letters"
+  add_foreign_key "favorites", "users"
   add_foreign_key "letters", "users"
 end
