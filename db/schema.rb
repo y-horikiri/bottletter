@@ -24,19 +24,17 @@ ActiveRecord::Schema.define(version: 2021_04_07_011036) do
   create_table "letters", force: :cascade do |t|
     t.integer "user_id", null: false
     t.text "content"
-    t.boolean "repliable"
+    t.boolean "repliable", default: false, null: false
     t.integer "reply_to"
-    t.boolean "twitter_attached"
+    t.boolean "twitter_attached", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_letters_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "provider"
-    t.string "uid"
-    t.string "nickname"
     t.string "name"
+    t.string "twitter_id"
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

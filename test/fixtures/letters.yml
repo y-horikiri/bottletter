@@ -1,8 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   user_id: 
-#   content: MyText
-#   repliable: false
-#   reply_to: 
-#   twitter_attached: false
+letter1:
+  user: horikiri
+  content: "Hello!!"
+  repliable: false
+  reply_to: nil
+  twitter_attached: false

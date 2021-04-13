@@ -3,3 +3,6 @@
 # one:
 #   name: MyString
 #   twitter_id: MyString
+horikiri:
+  name: "Horikiri Yutaro"
+  twitter_id: "y_horikiri"
