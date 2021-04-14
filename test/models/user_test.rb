@@ -15,10 +15,5 @@ class UserTest < ActiveSupport::TestCase
     assert_not @horikiri.valid?
   end
 
-  test "twitter_idの存在のvalidation" do
-    @horikiri.twitter_id = nil
-    assert_not @horikiri.valid?
-  end
-
 
 end
