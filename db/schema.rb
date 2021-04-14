@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_011036) do
+ActiveRecord::Schema.define(version: 2021_04_14_003259) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_011036) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "authenticated"
   end
 
   add_foreign_key "favorites", "letters"
