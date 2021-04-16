@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_04_14_003259) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "authenticated"
+    t.boolean "authenticated", default: false
   end
 
   add_foreign_key "favorites", "letters"
