@@ -1,6 +1,6 @@
 require "test_helper"
 
-class UsersSignupTest < ActionDispatch::IntegrationTest
+class EasyLoginTest < ActionDispatch::IntegrationTest
   
   test "かんたん登録" do
     get root_url
@@ -22,5 +22,10 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
     assert is_logged_in?
     assert flash[:success]
+
+    # ログアウト
+    delete logout_path
+    assert_not is_logged_in?
+    assert_redirected_to root_url
   end
 end
