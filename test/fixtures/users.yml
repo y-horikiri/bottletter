@@ -1,0 +1,9 @@
+horikiri:
+  name: "Horikiri Yutaro"
+  twitter_id: "hoge"
+  authenticated: false
+
+jotaro:
+  name: "Kujo Jotaro"
+  twitter_id: "star_platinum"
+  authenticated: true
