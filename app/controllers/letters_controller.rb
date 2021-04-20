@@ -4,11 +4,10 @@ class LettersController < ApplicationController
 
   def create
     @letter = current_user.letters.build(letter_params)
-    if @micropost.save
-      flash[:success] = 'Micropostが作成されました。'
+    if @letter.save
+      flash[:success] = 'レターを流しました。'
       redirect_to root_url
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
       render 'static_pages/home'
     end
   end
@@ -19,7 +18,12 @@ class LettersController < ApplicationController
 
   private
 
-  def letter_params
-    params.require(:letter).permit(:content, :repliable, :twitter_attached, :reply_to)
-  end
+    def letter_params
+      params.require(:letter).permit(:content, :repliable, :twitter_attached, :reply_to)
+    end
+
+    def correct_user
+      @letter = current_user.letters.find_by(id: params[:id])
+      redirect_to root_url if @micropost.nil?
+    end
 end

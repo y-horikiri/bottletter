@@ -46,6 +46,9 @@ Style/RedundantSelf:
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
 
+Layout/TrailingWhitespace: 
+  Enabled: false
+
 ##################### Lint ##################################
 
 ##################### Metrics ##################################
