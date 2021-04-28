@@ -20,4 +20,10 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
+    
+  class ActionDispatch::IntegrationTest
+    def easy_log_in_as(user)
+      post users_path params: { user: { name: user.name } }
+    end
+  end
 end

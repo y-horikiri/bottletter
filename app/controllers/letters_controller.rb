@@ -12,7 +12,9 @@ class LettersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @letter = Letter.find_by(id: params[:id]) 
+  end
 
   def destroy
     @letter.destroy
