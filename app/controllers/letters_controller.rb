@@ -14,7 +14,11 @@ class LettersController < ApplicationController
 
   def show; end
 
-  def destroy; end
+  def destroy
+    @letter.destroy
+    flash[:success] = "削除されました。"
+    redirect_to request.referrer || root_url
+  end
 
   private
 
@@ -24,6 +28,6 @@ class LettersController < ApplicationController
 
     def correct_user
       @letter = current_user.letters.find_by(id: params[:id])
-      redirect_to root_url if @micropost.nil?
+      redirect_to root_url if @letter.nil?
     end
 end
