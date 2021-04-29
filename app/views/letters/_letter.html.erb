@@ -6,9 +6,9 @@
     <span class="timestamp">
       <%= letter.created_at.strftime("%Y/%m/%d %H:%M") %>
     </span>
-    <span class="delete">
-      <% if current_user?(letter.user) %>
+    <% if current_user?(letter.user) %>
+      <span class="delete">
         <%= link_to "delete", letter, method: :delete, data: {confirm: "削除してよろしいですか？"} %>
-      <% end %>
-    </span>
+      </span>
+    <% end %>
   </li>
