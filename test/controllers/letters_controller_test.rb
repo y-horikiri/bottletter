@@ -21,7 +21,7 @@ class LettersControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "自分以外のユーザーのletterは削除できない" do
-    easy_log_in_as users(:horikiri)
+    easy_log_in
     letter = letters(:letter2)
     assert_no_difference "Letter.count" do
       delete letter_path(letter)

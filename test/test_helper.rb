@@ -22,8 +22,9 @@ class ActiveSupport::TestCase
   end
     
   class ActionDispatch::IntegrationTest
-    def easy_log_in_as(user)
-      post users_path params: { user: { name: user.name } }
+    def easy_log_in
+      post users_path params: { user: { name: "test_user" } }
+      assigns(:user)
     end
   end
 end

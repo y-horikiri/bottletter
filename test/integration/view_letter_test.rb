@@ -2,21 +2,13 @@ require "test_helper"
 
 class ViewLetterTest < ActionDispatch::IntegrationTest
   
-  def setup
-    @temp = User.new(name: "test_user")
-    easy_log_in_as @temp
-    @user = assigns(:user)
-  end
+  def setup; end
 
   test "自分のレター" do
-    @temp = User.new(name: "test_user")
-    easy_log_in_as @temp
-    @user = assigns(:user)
+    @user = easy_log_in
 
     # letterを投稿
-    assert_difference "Letter.count", 1 do
-      post letters_path params: { letter: { content: "test text" } }      
-    end
+    post letters_path params: { letter: { content: "test text" } }      
     @letter = assigns(:letter)
     # 自分のletterをget
     get letter_path(@letter.id)
@@ -26,9 +18,7 @@ class ViewLetterTest < ActionDispatch::IntegrationTest
   end
 
   test "自分以外のレター" do
-    @temp = User.new(name: "test_user")
-    easy_log_in_as @temp
-    @user = assigns(:user)
+    @user = easy_log_in
 
     @letter = letters(:letter2)
     get letter_path(@letter)

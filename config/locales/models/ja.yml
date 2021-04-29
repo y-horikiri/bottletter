@@ -2,7 +2,10 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      letter: レター
+      favorite: お気に入り
     attributes:
       user:
         name: 名前
-        
+      letter:
+        content: 内容
