@@ -18,8 +18,8 @@ class LettersController < ApplicationController
 
   def destroy
     @letter.destroy
-    flash[:success] = "削除されました。"
-    redirect_to request.referrer || root_url
+    flash[:success] = "レターを削除しました。"
+    redirect_to root_url
   end
 
   private

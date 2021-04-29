@@ -1,10 +1,12 @@
   <li id="letter-<%= letter.id %>">
-    <span class="user"><%= link_to letter.user.name, letter.user %></span>
     <span class="content">
-      <%= letter.content %>
+      <%= simple_format(h(letter.content)) %>
     </span>
+    <span class="user">by <%= letter.user.name %></span>
     <span class="timestamp">
-      <%= letter.created_at %>
+      <%= letter.created_at.strftime("%Y/%m/%d %H:%M") %>
+    </span>
+    <span class="delete">
       <% if current_user?(letter.user) %>
         <%= link_to "delete", letter, method: :delete, data: {confirm: "削除してよろしいですか？"} %>
       <% end %>
