@@ -17,6 +17,7 @@ class LettersController < ApplicationController
   end
 
   def destroy
+    # TODO: Ajax化
     @letter.destroy
     flash[:success] = "レターを削除しました。"
     redirect_to root_url

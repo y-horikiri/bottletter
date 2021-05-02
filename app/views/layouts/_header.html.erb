@@ -4,10 +4,10 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to current_user.name + "さん", "#" %></li>
+          <li><%= link_to current_user.name + "さん", current_user %></li>
           <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         <% end %>
-        <li><%= link_to "Home",   "#" %></li>
+        <li><%= link_to "Home",   root_path %></li>
         <li><%= link_to "Help",   "#" %></li>
       </ul>
     </nav>

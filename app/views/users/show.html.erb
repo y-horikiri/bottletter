@@ -1,0 +1,19 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class=col-md-8>
+    <% if @user.letters.any? %>
+    <h3>流したレター (<%= @user.letters.count %>)</h3>
+    <ol class="letters">
+      <%= render @letters %>
+    </ol>
+    <%= will_paginate @letters %>
+    <% end %>
+  </div>
+</div>
