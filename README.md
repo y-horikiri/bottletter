@@ -8,7 +8,7 @@ Things you may want to cover:
 * Ruby version
 ```bash
 $ ruby -v
-ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-darwin19]
+ruby 3.0.1p64 (2021-04-05 revision 0fb782ee38) [x86_64-darwin19]
 $ rails -v
 Rails 6.1.3.1
 ```
