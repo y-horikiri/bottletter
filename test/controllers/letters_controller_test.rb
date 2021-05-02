@@ -3,7 +3,7 @@ require "test_helper"
 class LettersControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @letter = letters(:letter1)
+    @letter = letters(:hello)
   end
   
   test "create時ログインしていない場合はリダイレクトする" do
@@ -22,7 +22,7 @@ class LettersControllerTest < ActionDispatch::IntegrationTest
   
   test "自分以外のユーザーのletterは削除できない" do
     easy_log_in
-    letter = letters(:letter2)
+    letter = letters(:oraora)
     assert_no_difference "Letter.count" do
       delete letter_path(letter)
     end

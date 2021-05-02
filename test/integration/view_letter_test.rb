@@ -20,7 +20,7 @@ class ViewLetterTest < ActionDispatch::IntegrationTest
   test "自分以外のレター" do
     @user = easy_log_in
 
-    @letter = letters(:letter2)
+    @letter = letters(:oraora)
     get letter_path(@letter)
     assert_template "letters/show"
     assert_match @letter.content, response.body
@@ -28,7 +28,7 @@ class ViewLetterTest < ActionDispatch::IntegrationTest
   end
 
   test "非ログイン状態" do
-    @letter = letters(:letter2)
+    @letter = letters(:oraora)
     get letter_path(@letter)
     assert_template "letters/show"
     assert_match @letter.content, response.body
