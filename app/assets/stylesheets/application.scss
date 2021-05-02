@@ -125,6 +125,13 @@ footer {
   }
 }
 
+.bottles{
+  margin: 10px 0;
+  .bottle{
+    transform: rotate(45deg);
+  }
+}
+
 /* miscellaneous */
 .debug_dump {
   clear: both;

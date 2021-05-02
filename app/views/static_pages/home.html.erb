@@ -11,6 +11,11 @@
 
         <%= f.submit "流す", class: "btn btn-primary" %>
       <% end %>
+      <div class="bottles">
+        <% (1..5).each do |n| %>
+          <%= link_to image_tag("bottle#{n}.png", alt: "bottle-#{n}", class: "bottle", width: "60px") , "#", id: "bottle-#{n}" %>
+        <% end %>
+      </div>
     <% else %>
       <%= form_with(model: @user, local: true) do |f| %>
         <%= render "shared/error_messages", object: f.object %>
