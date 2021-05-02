@@ -1,6 +1,6 @@
   <li id="letter-<%= letter.id %>">
     <span class="content">
-      <%= simple_format(h(letter.content)) %>
+      <%= raw Rinku.auto_link(simple_format(h(letter.content))) %>
     </span>
     <span class="user">by <%= letter.user.name %></span>
     <span class="timestamp">
