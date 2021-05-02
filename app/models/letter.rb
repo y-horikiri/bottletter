@@ -1,6 +1,7 @@
 class Letter < ApplicationRecord
   belongs_to :user
   has_many :favorites
+  belongs_to :recipient, class_name: "User", foreign_key: "reply_to", required: false
 
   validates :user_id, presence: true
   validates :content, presence: true, length: {maximum: 400}

@@ -3,7 +3,7 @@ class LettersController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def create
-    @letter = current_user.letters.build(letter_params)
+    @letter = current_user.letters.build(letter_params_easy)
     if @letter.save
       flash[:success] = 'レターを流しました。'
       redirect_to root_url
@@ -13,7 +13,7 @@ class LettersController < ApplicationController
   end
 
   def show
-    @letter = Letter.find_by(id: params[:id]) 
+    @letter = Letter.find_by(id: params[:id])
   end
 
   def destroy
@@ -26,6 +26,10 @@ class LettersController < ApplicationController
 
     def letter_params
       params.require(:letter).permit(:content, :repliable, :twitter_attached, :reply_to)
+    end
+
+    def letter_params_easy
+      params.require(:letter).permit(:content)
     end
 
     def correct_user

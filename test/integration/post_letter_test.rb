@@ -33,17 +33,28 @@ class PostLetterTest < ActionDispatch::IntegrationTest
 
   test "かんたんログイン時、twitter添付ができない" do
     @user = easy_log_in
-    
-    assert_no_difference "Letter.count" do
+    # 登録はできるが、twitter添付は無視される
+    assert_difference "Letter.count", 1 do
       post letters_path params: { letter: { content: "test text", twitter_attached: true } }
     end
+    assert assigns(:letter).twitter_attached == false
   end
 
   test "かんたんログイン時、返信可にできない" do
     @user = easy_log_in
-    
-    assert_no_difference "Letter.count" do
+    # 登録はできるが、返信可は無視される
+    assert_difference "Letter.count", 1 do
       post letters_path params: { letter: { content: "test text", repliable: true } }
     end
+    assert assigns(:letter).repliable == false
+  end
+
+  test "かんたんログイン時、返信先を指定できない" do
+    @user = easy_log_in
+    # 登録はできるが、返信先は無視される
+    assert_difference "Letter.count", 1 do
+      post letters_path params: { letter: { content: "test text", recipient: users(:horikiri) } }
+    end
+    assert_nil assigns(:letter).recipient
   end
 end
