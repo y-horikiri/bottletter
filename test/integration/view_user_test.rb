@@ -16,7 +16,7 @@ class ViewUserTest < ActionDispatch::IntegrationTest
     assert_select "div.pagination", count: 1
     @user.letters.paginate(page: 1).each do |letter|
       assert_select "a[href=?]", letter_path(letter)
-      assert_match letter.content, response.body
+      assert_match Rinku.auto_link(letter.content), response.body
     end
   end
 end

@@ -34,4 +34,10 @@ class ViewLetterTest < ActionDispatch::IntegrationTest
     assert_match @letter.content, response.body
     assert_select "span.delete", count: 0  
   end
+
+  test "URLは自動でリンクに変換される" do
+    @letter = letters(:link)
+    get letter_path(@letter)
+    assert_select "a[href=?]", "https://www.google.com/"
+  end
 end
