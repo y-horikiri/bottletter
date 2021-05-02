@@ -1,13 +1,30 @@
-letter1:
+hello:
   user: horikiri
   content: "Hello!!"
   repliable: false
   reply_to: nil
   twitter_attached: false
 
-letter2:
+oraora:
   user: jotaro
   content: "OraOraOraOra"
   repliable: true
   reply_to: nil
   twitter_attached: false
+
+link:
+  user: horikiri
+  content: "世界最大の検索エンジンだよ。https://www.google.com/"
+  repliable: false
+  reply_to: nil
+  twitter_attached: false
+
+<% 50.times do |n| %>
+letter-<%= n %>:
+  user: horikiri
+  content: "dummy-<%= n %>"
+  repliable: false
+  reply_to: nil
+  twitter_attached: false
+  created_at: <%= 10.days.ago %>
+<% end %>

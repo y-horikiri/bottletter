@@ -17,4 +17,14 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
   
+  def log_in_as(user)
+    session[:user_id] = user.id
+  end
+    
+  class ActionDispatch::IntegrationTest
+    def easy_log_in
+      post users_path params: { user: { name: "test_user" } }
+      assigns(:user)
+    end
+  end
 end

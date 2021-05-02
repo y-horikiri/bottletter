@@ -4,7 +4,7 @@ class LetterTest < ActiveSupport::TestCase
   
   def setup
     @horikiri = users(:horikiri)
-    @letter1 = letters(:letter1)
+    @letter1 = letters(:hello)
   end
 
   test "validである" do

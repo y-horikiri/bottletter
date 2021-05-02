@@ -5,7 +5,7 @@ class FavoriteTest < ActiveSupport::TestCase
   def setup
     @horikiri = users(:horikiri)
     @jotaro = users(:jotaro)
-    @letter2 = letters(:letter2)
+    @letter2 = letters(:oraora)
     @fav1 = favorites(:fav1)
   end
 

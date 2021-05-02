@@ -2,13 +2,29 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %>
-      <%= render "shared/error_messages", object: f.object %>
+    <% if logged_in? %>
+      <%= form_with(model: @letter, local: true) do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
 
-      <%= f.label "名前を入力してください。" %>
-      <%= f.text_field :name, class: "form-control" %>
+        <%= f.label "流すメッセージを入力しましょう" %>
+        <%= f.text_area :content, class: "form-control" %>
 
-      <%= f.submit "かんたん登録", class: "btn btn-primary" %>
+        <%= f.submit "流す", class: "btn btn-primary" %>
+      <% end %>
+      <div class="bottles">
+        <% (1..5).each do |n| %>
+          <%= link_to image_tag("bottle#{n}.png", alt: "bottle-#{n}", class: "bottle", width: "60px") , "#", id: "bottle-#{n}" %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= form_with(model: @user, local: true) do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+
+        <%= f.label "名前を入力してください。" %>
+        <%= f.text_field :name, class: "form-control" %>
+
+        <%= f.submit "かんたん登録", class: "btn btn-primary" %>
+      <% end %>
     <% end %>
   </div>
 </div>

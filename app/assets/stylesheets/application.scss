@@ -89,6 +89,48 @@ footer {
   }
 }
 
+/* letters */
+
+.letters {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    text-align: right;
+    padding-top: 0;
+    color: $gray-light;
+    display: block;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    font-size: 2em;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    text-align: right;
+    color: $gray-light;
+    display: block;
+  }
+  .delete {
+    text-align: right;
+    color: $gray-light;
+    display: block;
+  }
+}
+
+.bottles{
+  margin: 10px 0;
+  .bottle{
+    transform: rotate(45deg);
+  }
+}
 
 /* miscellaneous */
 .debug_dump {

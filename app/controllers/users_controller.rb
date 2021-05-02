@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def create
-    # 認証なし
+    # かんたんログイン
     @user = User.new(name: params[:user][:name])
     if @user.save
       log_in @user
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user = User.find_by(id: params[:id])
+    @letters = @user.letters.paginate(page: params[:page])
   end
 end
