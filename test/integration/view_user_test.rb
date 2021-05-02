@@ -15,6 +15,7 @@ class ViewUserTest < ActionDispatch::IntegrationTest
     assert_match @user.letters.count.to_s, response.body
     assert_select "div.pagination", count: 1
     @user.letters.paginate(page: 1).each do |letter|
+      assert_select "a[href=?]", letter_path(letter)
       assert_match letter.content, response.body
     end
   end
