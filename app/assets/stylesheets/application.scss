@@ -54,6 +54,11 @@ body {
 
 /* header */
 
+.navbar{
+  background-color:rgb(43, 61, 95);
+  border: none;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -74,7 +79,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: $gray-light;
+  color: #ddd;
   a {
     color: #ddd;
     &:hover {
@@ -114,6 +119,9 @@ footer {
 form {
   > .form-control{
     margin-bottom: 10px;
+  }
+  > textarea {
+    background-color: #bbb;
   }
 }
 
