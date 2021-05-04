@@ -13,7 +13,8 @@
       <% end %>
       <div class="bottles">
         <% (1..5).each do |n| %>
-          <%= link_to image_tag("bottle#{n}.png", alt: "bottle-#{n}", class: "bottle", width: "60px") , "#", id: "bottle-#{n}" %>
+          <%= link_to image_tag("bottle#{n}.png", alt: "bottle-#{n}", class: "bottle-image", width: "60px") ,
+           random_letters_path , id: "bottle-#{n}" %>
         <% end %>
       </div>
     <% else %>
