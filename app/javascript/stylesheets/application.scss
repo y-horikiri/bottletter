@@ -8,8 +8,16 @@
   box-sizing: border-box;
 }
 
-body {
-  color: #eee
+html {
+  body {
+    color: #eee;
+
+    a {
+      color: rgba($white, .55);
+    }
+  }
+
+  font-size: 14px;
 }
 
 /* container */
@@ -114,18 +122,30 @@ form {
   li {
     background-color: #eee;
     border-radius: 10px;
-    color: #333;
+    color: $gray-800;
     padding: 10px;
     margin-bottom: 10px;
     border-top: 1px solid #e8e8e8;
     box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.7);
+
+    a {
+      color: $gray-600;
+
+      &:hover {
+        color: $gray-500;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .letter-info span {
+    text-align: right;
+    display: block;
   }
 
   .user {
-    text-align: right;
     padding-top: 0;
-    color: $gray-500;
-    display: block;
+    color: $gray-600;
   }
 
   .content p {
@@ -137,6 +157,7 @@ form {
       padding: 5px 0;
     }
 
+    // 罫線風
     background-image: linear-gradient(180deg,
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0) 97%,
@@ -147,25 +168,10 @@ form {
     font-size: 1.4em;
   }
 
-  .timestamp {
-    text-align: right;
-    color: $gray-500;
-    display: block;
-  }
-
-  .delete {
-    text-align: right;
-    color: $gray-500;
-    display: block;
-  }
 }
 
 .bottles {
   margin: 10px 0;
-
-  .bottle {
-    transform: rotate(45deg);
-  }
 }
 
 /* miscellaneous */
