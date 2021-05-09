@@ -9,7 +9,11 @@
 }
 
 body {
-  color: #eee
+  color: #eee;
+
+  a {
+    color: rgba($white, .55);
+  }
 }
 
 /* container */
