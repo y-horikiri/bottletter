@@ -1,18 +1,15 @@
-<header class="navbar navbar-expand-md navbar-dark">
-  <div class="container">
-    <%= link_to "Bottletter", root_path, id: "logo", class: "navbar-brand" %>
-    <% if logged_in? %>
+<header class="container navbar navbar-expand-md navbar-dark">
+  <%= link_to "Bottletter", root_path, id: "logo", class: "navbar-brand" %>
+  <% if logged_in? %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><%= link_to current_user.name + "さん", current_user, class: "nav-link" %></li>
-        <li class="nav-item"><%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %></li>
-      </ul>
-      <% end %>
-
-    </div>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><%= link_to current_user.name + "さん", current_user, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %></li>
+    </ul>
+    <% end %>
   </div>
 </header>

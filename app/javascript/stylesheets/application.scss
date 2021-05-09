@@ -13,7 +13,7 @@ body {
 }
 
 /* container */
-.jumbotron {
+#wrapper {
   background-image: url('../images/beach1.jpg');
   background-attachment: fixed;
   background-position: center center;
@@ -21,6 +21,7 @@ body {
   background-size: cover;
   position: relative;
   z-index: 0;
+  min-height: 100vh;
 
   &:before {
     content: '';
@@ -37,9 +38,7 @@ body {
 /* header */
 
 .navbar {
-  background-color: rgb(43, 61, 95);
   border: none;
-  padding: 0;
 }
 
 .navbar-toggler {
@@ -64,29 +63,16 @@ body {
 /* footer */
 
 footer {
-  padding-top: 5px;
-  color: #ddd;
+  font-size: 0.8rem;
 
-  a {
-    color: #ddd;
-
-    &:hover {
-      color: #fff;
-    }
+  .link-with-text {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    display: inline-flex;
   }
 
-  small {
-    float: left;
-  }
-
-  ul {
-    float: right;
-    list-style: none;
-
-    li {
-      float: left;
-      margin-left: 15px;
-    }
+  #copyright {
+    color: rgba($white, .55);
   }
 }
 
