@@ -23,6 +23,11 @@ class LettersController < ApplicationController
     redirect_to root_url
   end
 
+  def random
+    letter = Letter.find(Letter.pluck(:id).sample)
+    redirect_to letter
+  end
+
   private
 
     def letter_params
