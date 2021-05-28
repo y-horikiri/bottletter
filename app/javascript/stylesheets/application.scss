@@ -16,6 +16,9 @@ html {
 
     a {
       color: rgba($white, .55);
+      &:hover{
+        color: rgba($white, .75);
+      }
     }
   }
 
@@ -133,7 +136,8 @@ form {
 
     a {
       color: $gray-600;
-
+      word-break: break-word;
+      
       &:hover {
         color: $gray-500;
         text-decoration: none;
