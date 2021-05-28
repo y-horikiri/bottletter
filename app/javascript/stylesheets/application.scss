@@ -172,9 +172,9 @@ form {
 
 /* bottle */
 .bottle-circle{
-  background-color:#A5D5FF;
+  background-color:#28c9ce;
   border-radius: 100%;
-  // border: 2px solid;
+  border: 5px white solid;
   width: 80px;
   height: 80px;
 }
@@ -190,7 +190,14 @@ a.linking-parent{
 
 .bottle-image{
   position: relative;
-  top: 10px;
+  top: 5px;
+  animation: rotation 4s ease 0s infinite normal none running;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(30deg) }
+  50% { transform: rotate(-30deg) }
+  100% { transform: rotate(30deg) }
 }
 
 /* miscellaneous */
