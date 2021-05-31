@@ -1,30 +1,15 @@
-# README
+# Bottletter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bottletterは、[ボトルメール](https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%88%E3%83%AB%E3%83%A1%E3%83%BC%E3%83%AB)をモチーフとしたシンプルなSNSです。  
+SNSでありながら、「つながらない」ことをコンセプトにしています。
 
-Things you may want to cover:
+[こちら](https://www.bottletter.com)からお試しください。
 
-* Ruby version
+
+## Version
 ```bash
 $ ruby -v
 ruby 3.0.1p64 (2021-04-05 revision 0fb782ee38) [x86_64-darwin19]
 $ rails -v
-Rails 6.1.3.1
+Rails 6.1.3.2
 ```
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
