@@ -1,4 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+/* logo font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Indie+Flower&display=swap');
 
 /* mixins, variable, etc */
 
@@ -14,6 +16,9 @@ html {
 
     a {
       color: rgba($white, .55);
+      &:hover{
+        color: rgba($white, .75);
+      }
     }
   }
 
@@ -57,10 +62,11 @@ html {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-family: 'Indie Flower';
+  font-size: 2em;
   color: white;
-  letter-spacing: -1px;
-  font-weight: bold;
+  // letter-spacing: -1px;
+  // font-weight: bold;
 
   &:hover {
     color: white;
@@ -130,7 +136,8 @@ form {
 
     a {
       color: $gray-600;
-
+      word-break: break-word;
+      
       &:hover {
         color: $gray-500;
         text-decoration: none;
@@ -170,8 +177,35 @@ form {
 
 }
 
-.bottles {
-  margin: 10px 0;
+/* bottle */
+.bottle-circle{
+  background-color:#28c9ce;
+  border-radius: 100%;
+  border: 5px white solid;
+  width: 80px;
+  height: 80px;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.7);
+}
+
+a.linking-parent{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bottle-image{
+  position: relative;
+  top: 5px;
+  animation: rotation 4s ease 0s infinite normal none running;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(30deg) }
+  50% { transform: rotate(-30deg) }
+  100% { transform: rotate(30deg) }
 }
 
 /* miscellaneous */

@@ -4,4 +4,7 @@
       <%= render @letter %>
     </ul>
   </div>
+  <% if logged_in? %>
+  <%= render "layouts/bottle" %>
+  <% end %>
 </div>

@@ -8,12 +8,6 @@
 
     <%= f.submit "流す", class: "btn btn-primary" %>
     <% end %>
-    <div class="bottles">
-      <% (1..5).each do |n| %>
-      <%= link_to image_pack_tag("bottle#{n}.png", alt: "bottle-#{n}", class: "bottle-image", width: "60px") ,
-           random_letters_path , id: "bottle-#{n}" %>
-      <% end %>
-    </div>
     <% else %>
     <%= form_with(model: @user, local: true) do |f| %>
     <%= render "shared/error_messages", object: f.object %>
@@ -25,4 +19,8 @@
     <% end %>
     <% end %>
   </div>
+
+  <% if logged_in? %>
+  <%= render "layouts/bottle" %>
+  <% end %>
 </div>
