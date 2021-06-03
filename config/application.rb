@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "rails/all"
+require "./lib/CloudflareProxy"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -26,5 +27,8 @@ module Bottletter
     # 日本語化
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+
+    # Cloudflare環境のエラーの対処
+    config.middleware.use CloudflareProxy
   end
 end
