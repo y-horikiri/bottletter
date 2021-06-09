@@ -41,7 +41,11 @@ Style/FrozenStringLiteralComment:
 # selfが無くても良い時に省略するか。model内において、ローカル変数とメソッド呼び出しの区別をつけた方が分かりやすい場合が多い
 Style/RedundantSelf:
   Enabled: false
-  
+
+# 基本はダブルクオートを使用する
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
 # private/protected は一段深くインデントする
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
@@ -73,3 +77,5 @@ Metrics/MethodLength:
   Exclude:
     - "db/migrate/*.rb"
 
+Naming/HeredocDelimiterNaming:
+  Enabled: false

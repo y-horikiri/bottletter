@@ -5,10 +5,11 @@ class LettersController < ApplicationController
   def create
     @letter = current_user.letters.build(letter_params_easy)
     if @letter.save
-      flash[:success] = 'レターを流しました。'
+      flash[:success] = "レターを流しました。"
       redirect_to root_url
     else
-      render 'static_pages/home'
+      render "static_pages/home"
+      
     end
   end
 
