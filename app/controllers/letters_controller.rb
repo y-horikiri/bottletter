@@ -19,7 +19,7 @@ class LettersController < ApplicationController
   def destroy
     # TODO: Ajax化
     @letter.destroy
-    flash[:success] = "レターを削除しました。"
+    flash[:success] = 'レターを削除しました。'
     redirect_to root_url
   end
 
@@ -30,16 +30,16 @@ class LettersController < ApplicationController
 
   private
 
-    def letter_params
-      params.require(:letter).permit(:content, :repliable, :twitter_attached, :reply_to)
-    end
+  def letter_params
+    params.require(:letter).permit(:content, :repliable, :twitter_attached, :reply_to)
+  end
 
-    def letter_params_easy
-      params.require(:letter).permit(:content)
-    end
+  def letter_params_easy
+    params.require(:letter).permit(:content)
+  end
 
-    def correct_user
-      @letter = current_user.letters.find_by(id: params[:id])
-      redirect_to root_url if @letter.nil?
-    end
+  def correct_user
+    @letter = current_user.letters.find_by(id: params[:id])
+    redirect_to root_url if @letter.nil?
+  end
 end
