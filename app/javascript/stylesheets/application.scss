@@ -16,7 +16,8 @@ html {
 
     a {
       color: rgba($white, .55);
-      &:hover{
+
+      &:hover {
         color: rgba($white, .75);
       }
     }
@@ -72,6 +73,13 @@ html {
     color: white;
     text-decoration: none;
   }
+}
+
+/* home */
+.card-gray {
+  background-color: rgba($black, .20);
+  border-radius: 1rem;
+  margin: 1rem 0;
 }
 
 /* footer */
@@ -137,7 +145,7 @@ form {
     a {
       color: $gray-600;
       word-break: break-word;
-      
+
       &:hover {
         color: $gray-500;
         text-decoration: none;
@@ -178,8 +186,8 @@ form {
 }
 
 /* bottle */
-.bottle-circle{
-  background-color:#28c9ce;
+.bottle-circle {
+  background-color: #28c9ce;
   border-radius: 100%;
   border: 5px white solid;
   width: 80px;
@@ -187,7 +195,7 @@ form {
   box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.7);
 }
 
-a.linking-parent{
+a.linking-parent {
   display: block;
   position: absolute;
   top: 0;
@@ -196,16 +204,24 @@ a.linking-parent{
   height: 100%;
 }
 
-.bottle-image{
+.bottle-image {
   position: relative;
   top: 5px;
   animation: rotation 4s ease 0s infinite normal none running;
 }
 
 @keyframes rotation {
-  0% { transform: rotate(30deg) }
-  50% { transform: rotate(-30deg) }
-  100% { transform: rotate(30deg) }
+  0% {
+    transform: rotate(30deg)
+  }
+
+  50% {
+    transform: rotate(-30deg)
+  }
+
+  100% {
+    transform: rotate(30deg)
+  }
 }
 
 /* miscellaneous */

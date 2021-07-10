@@ -9,14 +9,34 @@
     <%= f.submit "流す", class: "btn btn-primary" %>
     <% end %>
     <% else %>
-    <%= form_with(model: @user, local: true) do |f| %>
-    <%= render "shared/error_messages", object: f.object %>
+    <div class="card card-gray">
+      <div class="card-header">
+        <h2 class="card-title">かんたん登録</h2>
+      </div>
+      <div class="card-body">
+        <%= form_with(model: @user, local: true) do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
 
-    <%= f.label "名前を入力してください。" %>
-    <%= f.text_field :name, class: "form-control" %>
+        <p>名前を入力するだけですぐにBottletterを利用できます。<br>
+          ブラウザを終了するとアカウントにアクセスできなくなる（※）ため、おためし用にどうぞ。<br>
+          ※ブラウザの設定によって動作は異なります。</p>
+        <%= f.label "名前を入力してください。" %>
+        <%= f.text_field :name, class: "form-control" %>
 
-    <%= f.submit "かんたん登録", class: "btn btn-primary" %>
-    <% end %>
+        <%= f.submit "かんたん登録", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card card-gray">
+      <div class="card-header">
+        <h2 class="card-title">Twitter登録</h2>
+      </div>
+      <div class="card-body">
+        <p>Twitterで登録/ログインすると、ブラウザを終了したり、端末を変えたりしてもアカウントにアクセスできます。<br>
+        </p>
+        <a href="/auth/twitter" class="btn btn-primary">Twitter登録/ログイン</a>
+      </div>
+    </div>
     <% end %>
   </div>
 

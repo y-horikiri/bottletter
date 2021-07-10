@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/terms", to: "static_pages#terms"
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
+  get "/auth/:provider/callback", to: "sessions#create"
   resources :users, only: [:create, :show]
   resources :letters do
     collection do
