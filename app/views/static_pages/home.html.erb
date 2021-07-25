@@ -34,7 +34,7 @@
       <div class="card-body">
         <p>Twitterで登録/ログインすると、ブラウザを終了したり、端末を変えたりしてもアカウントにアクセスできます。<br>
         </p>
-        <a href="/auth/twitter" class="btn btn-primary">Twitter登録/ログイン</a>
+        <%= button_to "Twitter登録/ログイン", "/auth/twitter", method: "post", class: "btn btn-primary" %>
       </div>
     </div>
     <% end %>

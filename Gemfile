@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem 'bootstrap-sass'
 gem 'dotenv-rails'
 gem 'omniauth-twitter'
+gem 'omniauth-rails_csrf_protection'
 gem 'rails-i18n'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
